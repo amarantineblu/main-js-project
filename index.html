@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Main Javascript Project </title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="preLoader">
+		<div class="svg">
+			<object type="image/svg+xml" data="image.svg">
+				<!-- Your fall back here -->
+				<img src="./images/preloader.svg" />
+			</object>
+			<h2> Hi Would you like to Play a Game? </h2>
+			<div class="preloaderBtnGroup">
+				<button class="preBtn" id="yes">
+					<rect width="300" height="300" fill="" />
+					<path id="Triangle"
+						d="M676.671 342.119H655.301L665.617 324.434L676.671 342.119ZM657.588 340.806H674.301L665.656 326.974L657.588 340.806Z"
+						fill="#eee4e4" />
+					<defs>
+						<clipPath id="clip0_0_1">
+							<rect width="300" height="300" fill="white" />
+						</clipPath>
+					</defs>
+				</button>
+				<button class="preBtn" id="no">
+					<g id="Cross">
+						<path id="Vector_55" d="M661.505 393.363L660.576 394.291L675.35 409.065L676.278 408.136L661.505 393.363Z"
+							fill="#eee4e4" />
+						<path id="Vector_56" d="M675.687 393.351L660.587 407.799L661.495 408.748L676.595 394.3L675.687 393.351Z"
+							fill="#eee4e4" />
+					</g>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<header>
+		<div class="headerLogo">
+			<img src="./images/gamepad.png" alt="The Game Logo " srcset="">
+			<h1> AgCom </h1>
+		</div>
+		<div class="headerLinks">
+			<button class="aboutGame"> About Game </button>
+			<button id="headerBtn"> Instructions </button>
+		</div>
+	</header>
+
+	<div id="instructionDiv">
+		<p> This game is played between you and your computer. There are three buttons
+			 below, you click on any of them and the computer does the same on it's end 
+				and if your value is the same with that of the computers', you win if the reverse 
+				happens, you loose. Whoever gets 5 points first, is pronounced the winner.
+		</p>
+	</div>
+
+	<section class="hero">
+		<div class="heroCard">
+			<h6> THIS IS </h6>
+			<h3> HOW IT WORKS </h3>
+			<p> You select any of the buttons below while the computer
+				does the same on it's end. If the computer's selection is the same
+				as yours, then you win. Else you loose!
+			</p>
+		</div>
+	</section>
+
+	<section class="gameContents">
+		<div class="gameCard">
+			<div class="scores">
+				<h1> CLICK ANY BUTTON </h1>
+				<div class="scoreCard">
+					<h1 class="scoreSheet" id="my_score"> 0 </h1>
+					<h1 class="seperators"> : </h1>					
+					<h1 class="scoreSheet" id="com_score"> 0 </h1>
+				</div>
+				<div class="btnGroups">
+					<button class="btn" id="Paper"> Paper </button>
+					<button class="btn" id="Rock"> Rock </button>
+					<button class="btn" id="Scissors "> Scissors </button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="footerLogo">
+			<img src="./images/gamepad.png" alt=" The Game Logo" srcset="">
+			<h1> AgCom </h1>
+		</div>
+		<div class="footerText">
+			<h3> This Game was developed by Marcus Lebanon Elioma.</h3>
+		</div>
+		<div>
+			<input type="text" placeholder=" Tell me what you think">
+			<button> Submit </button>
+		</div>
+	</footer>
+	<script src="script.js"></script>
+</body>
+
+</html>

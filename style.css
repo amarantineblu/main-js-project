@@ -1,0 +1,251 @@
+@font-face{
+	font-family: Roboto;
+	src: url(/fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+*{
+  font-style: 'Roboto';
+}
+
+#preLoader{
+	background: rgba(255, 255, 255, 0.496);
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+object img{
+	width: 300px;
+  height: auto;
+}
+
+#Triangle, #Square, #Circle, #Cross,
+#Controls, .headerLogo img, .footerLogo img {
+	animation: turn linear 2s infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+#girlsLeg{
+	animation: legs alternate linear 3s infinite;
+	transform-origin: top;
+	transform-box: fill-box;
+}
+
+.svg{
+  background-color: rgb(249, 242, 242);
+  padding: 70px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body{
+	background-image: url(./images/background_image.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+section, header, footer{
+	padding: 0 10%;
+	border-radius: 5px;
+}
+
+header, footer{
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #eee4e4;
+	padding: 25px;
+}
+
+header{
+	position: sticky;
+}
+
+#instructionDiv{
+	background-color: white;
+	width: 40%;
+	padding: 100px 70px;
+	text-align: center;
+	font-weight: bolder;
+	border-radius: 5px;
+	right: 0;
+	position: absolute;
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+#instructionDiv.active{
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.headerLogo, .footerLogo{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header img, footer img{
+	width: 30px;
+	height: auto;
+}
+
+.hero{
+	padding: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.heroCard{
+	background-color: rgba(240, 248, 255, 0.652);
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	padding: 70px;
+}
+
+.gameContents{
+	background-image: url('./images/gaming_background.jpg') ;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	padding: 100px;
+}
+
+.scoreCard{
+	display: flex;
+	align-items: center;
+}
+
+.gameCard{
+	background-color: aliceblue;
+	border-radius: 5px;
+	padding: 50px;
+}
+
+.scores{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgb(61, 37, 37);
+	color: white;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.scoreSheet{
+  background-color: white;
+  color: black;
+  border-radius: 30%;
+	border: 20px solid red;
+  padding: 30px;
+  margin: 20px;
+}
+
+.btnGroups, .preloaderBtnGroup{
+	display: flex;
+	justify-content: space-around;
+	padding: 20px;
+	gap: 1px;
+}
+
+button{
+	background-color: aqua;
+	color: white;
+	padding: 20px;
+	width: auto;
+	border: none;
+	border-radius: 5px;
+}
+
+footer .footerText{
+	text-align: center;
+}
+
+footer{
+	gap: 5px;
+	background-color:rgb(61, 37, 37);
+	color: wheat;
+}
+
+footer input{
+	padding: 5px;
+}
+
+@media (max-width:390px) {
+	.headerLinks{
+		display: flex;
+	}
+
+	section{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.btnGroups{
+		display: flex;
+		justify-content: center;
+		margin: 3px 15px;
+	}
+	
+	.gameContents{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.gameScores{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.gameCard{
+		display: flex;
+		width: 10%;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	footer{
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+/* keyframes for animations */
+@keyframes turn {
+	from{
+		transform: rotateZ(0deg);
+	}
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+
+@keyframes legs {
+	from{
+		transform: rotateZ(0deg);
+	}
+	to{
+		transform: rotateZ(10deg);
+	}
+}
