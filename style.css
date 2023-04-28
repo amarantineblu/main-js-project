@@ -20,13 +20,13 @@
   align-items: center;
 }
 
-object img{
+.object svg{
 	width: 300px;
   height: auto;
 }
 
 #Triangle, #Square, #Circle, #Cross,
-#Controls, .headerLogo img, .footerLogo img {
+#Controls, .headerLogo img, .footerLogo img{
 	animation: turn linear 2s infinite;
 	transform-origin: center;
 	transform-box: fill-box;

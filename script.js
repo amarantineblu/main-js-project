@@ -1,5 +1,5 @@
 
-var loader = document.getElementById('preLoader');
+var loader = document.getElementById('preLoader'); 
 const okay = document.getElementById('yes')
 okay.addEventListener("click", function(){
     loader.style.display = "none";
@@ -9,6 +9,13 @@ const instruction = document.getElementById('headerBtn');
 const instructionDiv = document.getElementById('instructionDiv')
 instruction.addEventListener('click', function(){
     instructionDiv.classList.toggle('active');
+});
+
+const about = document.getElementById('aboutGame');
+const aboutDiv = document.getElementById('instructionDiv');
+about.addEventListener('click', function(){
+	aboutDiv.classList.toggle('active');
+	aboutDiv.textContent = "This game is ";
 });
 
 
@@ -54,11 +61,13 @@ buttons.forEach((btn) => {
 	});
 });
 
-function game() {
+
+function game(selection) {
     let playerScore = 0;
     let computerScore = 0;
-		let playerSelection = "";
+		let playerSelection = selection;
 		computerSelection = computerPlay();
+		
 		score = playRound(playerSelection,computerSelection);
 		if (score == "win"){
 				playerScore++
@@ -68,6 +77,7 @@ function game() {
 				console.log(`You loose ${computerSelection} beats ${playerSelection}`);
 		}
     
+
     if (playerScore > computerScore) {
         me++;
         myScore.textContent = me;
@@ -82,5 +92,15 @@ function game() {
         myScore.textContent = me;
         comScore.textContent = computer;
         console.log(`You Loose! Score: ${computerScore} to ${playerScore}`)      
-    }    
+    }  
+
+		if (me % 5===0) {
+			if(me===0)return;
+				;
+		}
+		if (computer % 5===0) {
+			if (computer===0)return;
+			console.log('here');
+		}
+		
 }
