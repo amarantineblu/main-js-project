@@ -15,7 +15,7 @@ const about = document.getElementById('aboutGame');
 const aboutDiv = document.getElementById('instructionDiv');
 about.addEventListener('click', function(){
 	aboutDiv.classList.toggle('active');
-	aboutDiv.textContent = "This game is ";
+	aboutDiv.textContent = "I decided to call this game 'AgCom' just like an abbreviation of Against Computer. ";
 });
 
 
@@ -96,11 +96,10 @@ function game(selection) {
 
 		if (me % 5===0) {
 			if(me===0)return;
-				;
+				
 		}
 		if (computer % 5===0) {
 			if (computer===0)return;
-			console.log('here');
 		}
 		
 }

@@ -188,7 +188,7 @@ footer input{
 	padding: 5px;
 }
 
-@media (max-width:390px) {
+@media (max-width:390px){
 	.headerLinks{
 		display: flex;
 	}
@@ -232,7 +232,7 @@ footer input{
 }
 
 /* keyframes for animations */
-@keyframes turn {
+@keyframes turn{
 	from{
 		transform: rotateZ(0deg);
 	}
@@ -241,7 +241,7 @@ footer input{
 	}
 }
 
-@keyframes legs {
+@keyframes legs{
 	from{
 		transform: rotateZ(0deg);
 	}
