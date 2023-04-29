@@ -49,7 +49,7 @@
 }
 
 body{
-	background-image: url(./images/background_image.jpg);
+	background-image: url(../images/background_image.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -118,7 +118,7 @@ header img, footer img{
 }
 
 .gameContents{
-	background-image: url('./images/gaming_background.jpg') ;
+	background-image: url(../images/gaming_background.jpg) ;
 	background-size: cover;
 	display: flex;
 	justify-content: center;
