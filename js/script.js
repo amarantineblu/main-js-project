@@ -1,4 +1,3 @@
-
 var loader = document.getElementById('preLoader'); 
 const okay = document.getElementById('yes')
 okay.addEventListener("click", function(){
@@ -15,7 +14,7 @@ const about = document.getElementById('aboutGame');
 const aboutDiv = document.getElementById('instructionDiv');
 about.addEventListener('click', function(){
 	aboutDiv.classList.toggle('active');
-	aboutDiv.textContent = "I decided to call this game 'AgCom' just like an abbreviation of Against Computer. ";
+	aboutDiv.textContent = "I decided to call this game 'AgCom' just like an abbreviation of Against  ";
 });
 
 
@@ -27,7 +26,7 @@ function computerPlay(){
     if (pick == 3 ){
     //if the system picks the value 3, then the string "Scissors" is attached to it
         return("Scissors");   
-    }else if (pick == 2) {      
+    }else if (pick == 2){      
     //if the system picks the value 2, then the string "Rock" is attached to it
         return("Rock");
     }else {
@@ -38,9 +37,9 @@ function computerPlay(){
 computerPlay(); //Calling the function computerPlay
 
 // comparing the result of player and computer.
-function playRound(playerSelection, computerSelection ) {
+function playRound(playerSelection, computerSelection ){
     // if player value is the same as computer value.
-    if (playerSelection == computerSelection) {
+    if (playerSelection == computerSelection){
         return "win" //"You win!";
     } else {
         //If Player value isn't the same as computer value
@@ -49,41 +48,41 @@ function playRound(playerSelection, computerSelection ) {
 }
 
 
-const buttons = document.querySelectorAll('.btn');
-const myScore = document.getElementById('my_score');
-const comScore = document.getElementById('com_score');
+const buttons = document.querySelectorAll('.btn'); //a query selector all to select all the buttons we'll use to play
+const myScore = document.getElementById('my_score'); //The UI on the index.html where my score will show
+const comScore = document.getElementById('com_score'); //The UI on the index.html where the computer score will show
 let me = 0;
 let computer = 0;
 
 buttons.forEach((btn) => {
 	btn.addEventListener('click', (p) => {
-			game(btn.id);
+			game(btn.id); //Each button calls the game function when clicked
 	});
 });
 
 
-function game(selection) {
-    let playerScore = 0;
+function game(selection){
+    let playerScore = 0; 
     let computerScore = 0;
-		let playerSelection = selection;
-		computerSelection = computerPlay();
-		
-		score = playRound(playerSelection,computerSelection);
-		if (score == "win"){
-				playerScore++
-				console.log(`You win ${playerSelection} beats ${computerSelection}`);
-		}else{
-				computerScore++
-				console.log(`You loose ${computerSelection} beats ${playerSelection}`);
-		}
+    let playerSelection = selection;
+    computerSelection = computerPlay();
+    score = playRound(playerSelection,computerSelection);
+
+    if (score == "win"){
+            playerScore++
+            console.log(`You win ${playerSelection} beats ${computerSelection}`);
+    }else{
+            computerScore++
+            console.log(`You loose ${computerSelection} beats ${playerSelection}`);
+    }
     
 
-    if (playerScore > computerScore) {
+    if (playerScore > computerScore){
         me++;
         myScore.textContent = me;
         comScore.textContent = computer;
         console.log(`You win! Score: ${playerScore} : ${computerScore}`)
-    } else if (playerScore == computerScore) {
+    } else if (playerScore == computerScore){
         myScore.textContent = me;
         comScore.textContent = computer;
         console.log(`This is a draw ${playerScore} : ${computerScore}`);
@@ -94,12 +93,12 @@ function game(selection) {
         console.log(`You Loose! Score: ${computerScore} to ${playerScore}`)      
     }  
 
-		if (me % 5===0) {
-			if(me===0)return;
-				
-		}
-		if (computer % 5===0) {
-			if (computer===0)return;
-		}
-		
+    if (me % 5===0){
+        if(me===0)return; //On this if statement and the one to follow, the alert
+        alert('You win'); // function announces the winner iff the winner has 5 points
+    }
+    if (computer % 5===0){
+        if (computer===0)return;
+        alert("Computer win");
+    }	
 }
