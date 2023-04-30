@@ -19,9 +19,10 @@ about.addEventListener('click', function () {
 
 
 // a javascript function to return Scissors, Rock and Paper;
-const gameParameters = ["rock", "paper", "scissors"];
+const gameParameters = ["Rock", "Paper", "Scissors"];
 function computerPlay() {
 	const pick = Math.floor(Math.random() * gameParameters.length);
+	console.log(pick);
 	let play
 	switch (pick) {
 		case 0:
@@ -41,9 +42,9 @@ function playRound() {
 	if (playerSelection == computerSelection) {
 		return 'tie';
 	}	else if (
-		(playerSelection == "rock" && computerSelection == "scissors") ||
-		(playerSelection == "paper" && computerSelection == "rock") ||
-		(playerSelection == "scissors" && computerSelection == "paper")) {
+		(playerSelection == "Rock" && computerSelection == "Scissors") ||
+		(playerSelection == "Paper" && computerSelection == "Rock") ||
+		(playerSelection == "Scissors" && computerSelection == "Paper")) {
 		return 'win'
 	} else {
 		return "loose"
@@ -63,20 +64,18 @@ buttons.forEach((btn) => {
 });
 
 function game(selection) {
+	console.log(selection)
+	
 	let playerScore = 0;
 	let computerScore = 0;
 	playerSelection = selection;
 	computerSelection = computerPlay();
 
-	let score = playRound();
-	if (score == 'tie') {
-		playerScore++
-		computerScore++
-		console.log(`a draw ${playerSelection} and ${computerSelection}`);
-	}	else if (score == "win") {
+	let score = playRound(playerSelection,computerSelection);
+	if (score == "win") {
 		playerScore++
 		console.log(`You win ${playerSelection} beats ${computerSelection}`);
-	} else {
+	}  else {
 		computerScore++
 		console.log(`You loose ${computerSelection} beats ${playerSelection}`);
 	}
