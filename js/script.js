@@ -96,12 +96,8 @@ function game(selection) {
 		console.log(`You Loose! Score: ${playerScore} to ${computerScore}`)
 	}
 
-	if (me % 5 === 0) {
-		if (me === 0) return; //On this if statement and the one to follow, the alert
-		alert('You win'); // function announces the winner iff the winner has 5 points
-	}
-	if (computer % 5 === 0) {
-		if (computer === 0) return;
-		alert("Computer win");
+	if (me == 5 || computer == 5) {
+		(me == 5) ? document.write("you win") : document.write("you loose"); //On this if statement and the one to follow, the alert
+		location.href = "";
 	}
 }
